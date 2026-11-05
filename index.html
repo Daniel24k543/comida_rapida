@@ -289,7 +289,7 @@
     <nav class="footer__col" aria-label="Sobre Mordisco"><b>Sobre Mordisco</b><a href="#manifesto">Misión <svg class="ico"><use href="#i-caret"/></svg></a><a href="#festin">El festín <svg class="ico"><use href="#i-caret"/></svg></a><a href="#top">Volver arriba <svg class="ico"><use href="#i-caret"/></svg></a></nav>
   </div>
   <div class="footer__legal">
-    <a href="#top">Términos de uso</a><a href="#top">Privacidad</a><a href="#top">Cookies</a>
+    <a href="#top">Términos de uso</a><a href="#politica-de-privacidad" data-lg="priv">Privacidad</a><a href="#top">Cookies</a>
   </div>
 </footer>
 
@@ -330,5 +330,179 @@
 
 <div class="cart" id="cart" hidden><span id="cart-n">0</span> en el pedido <a class="btn btn--primary btn--sm" href="#local">Ver</a></div>
 <script src="app.js"></script>
+
+<!-- LEGAL:INICIO -->
+<style>
+/* ===== Legal: libro de reclamaciones y política de privacidad ===== */
+.lg-bar{background:#150a0e;color:#f4eae2;border-top:1px solid rgba(244,234,226,.2);padding:18px max(16px,env(safe-area-inset-right)) calc(18px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));font:400 13px/1.4 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;justify-content:center;text-align:center;position:relative;z-index:5}
+.lg-bar span{opacity:.75}
+.lg-bar button{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:7px;color:inherit;font:500 13px/1.4 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(244,234,226,.2);transition:text-decoration-color .3s,color .3s}
+.lg-bar button:hover,.lg-bar button:focus-visible{text-decoration-color:currentColor}
+.lg-bar button:focus-visible{outline:2px solid #c4352a;outline-offset:4px;border-radius:3px}
+.lg-bar svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+dialog.lg{border:1px solid rgba(244,234,226,.2);padding:0;width:min(760px,calc(100vw - 24px));max-height:min(88vh,88svh);background:#2b1119;color:#f4eae2;border-radius:14px;font:400 15px/1.6 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;letter-spacing:normal;text-transform:none;overflow:hidden}
+dialog.lg[open]{display:flex;flex-direction:column}
+dialog.lg::backdrop{background:rgba(0,0,0,.62)}
+.lg-h{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 22px;border-bottom:1px solid rgba(244,234,226,.2);flex:none}
+.lg-h h2{margin:0;font:600 18px/1.25 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;letter-spacing:normal;text-transform:none;color:#f4eae2}
+.lg-x{all:unset;cursor:pointer;width:36px;height:36px;display:grid;place-items:center;border-radius:50%;color:#f4eae2;flex:none}
+.lg-x:hover{background:rgba(244,234,226,.07)}
+.lg-x:focus-visible{outline:2px solid #c4352a}
+.lg-x svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round}
+.lg-b{overflow-y:auto;padding:20px 22px 28px;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.lg-b h3{margin:26px 0 6px;font:600 15px/1.3 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#f4eae2;letter-spacing:normal;text-transform:none}
+.lg-b h3:first-child{margin-top:0}
+.lg-b p,.lg-b li{margin:0 0 8px;color:#d9c3bb;font-size:14.5px;line-height:1.6}
+.lg-b ul{margin:0 0 8px;padding-left:20px}
+.lg-b strong{color:#f4eae2;font-weight:600}
+.lg-b a{color:#ecc3b8;text-underline-offset:3px}
+.lg-fill{background:rgba(244,234,226,.07);border-radius:3px;padding:0 5px;color:#f4eae2;white-space:nowrap}
+.lg-note{border:1px solid rgba(244,234,226,.2);border-radius:14px;padding:12px 14px;margin:0 0 18px;background:rgba(244,234,226,.07)}
+.lg-note p{margin:0;color:#d9c3bb;font-size:13.5px}
+dialog.lg #lg-form{display:block;grid-template-columns:none;grid-column:auto;gap:0;margin:0;padding:0;max-width:none;width:auto;background:none;border:0;box-shadow:none}
+dialog.lg .lg-b fieldset{display:block;grid-template-columns:none;grid-column:auto;gap:0;border:0;margin:0 0 6px;padding:0;min-width:0;width:auto}
+dialog.lg .lg-b legend{float:none;width:auto}
+dialog.lg .lg-b label,dialog.lg .lg-b p,dialog.lg .lg-b li,dialog.lg .lg-b h3{text-transform:none;letter-spacing:normal}
+.lg-b legend{font:600 15px/1.3 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#f4eae2;padding:0;margin:22px 0 10px}
+.lg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lg-b label{display:block;font:500 13px/1.3 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#f4eae2;margin:0 0 5px}
+.lg-b input,.lg-b select,.lg-b textarea{width:100%;box-sizing:border-box;background:#2b1119;color:#f4eae2;border:1px solid rgba(244,234,226,.2);border-radius:14px;padding:10px 12px;font:400 15px/1.4 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;letter-spacing:normal;text-transform:none;margin:0 0 12px}
+.lg-b textarea{min-height:92px;resize:vertical}
+.lg-b input:focus,.lg-b select:focus,.lg-b textarea:focus{outline:2px solid #c4352a;outline-offset:1px;border-color:transparent}
+.lg-b .lg-opt{display:flex;gap:18px;flex-wrap:wrap;margin:0 0 12px}
+.lg-b .lg-opt label{display:flex;gap:8px;align-items:flex-start;font-weight:400;margin:0;cursor:pointer}
+.lg-b .lg-opt input{width:auto;margin:3px 0 0;accent-color:#c4352a}
+.lg-b .lg-chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;color:#d9c3bb;font-size:13.5px;margin:0 0 10px;cursor:pointer}
+.lg-b .lg-chk input{width:auto;margin:3px 0 0;flex:none;accent-color:#c4352a}
+.lg-err{color:#e5736b;font-size:13.5px;min-height:20px;margin:6px 0 10px}
+.lg-go{all:unset;cursor:pointer;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;background:#c4352a;color:#f4eae2;border-radius:999px;padding:12px 26px;font:600 14px/1 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;transition:opacity .3s,transform .3s}
+.lg-go:hover{opacity:.88}
+.lg-go:focus-visible{outline:2px solid #f4eae2;outline-offset:3px}
+.lg-ghost{all:unset;cursor:pointer;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(244,234,226,.2);color:#f4eae2;border-radius:999px;padding:11px 22px;font:500 14px/1 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.lg-ghost:hover{background:rgba(244,234,226,.07)}
+.lg-acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.lg-sum{white-space:pre-wrap;word-break:break-word;background:rgba(244,234,226,.07);border-radius:14px;padding:14px;font:400 13px/1.55 ui-monospace,Menlo,Consolas,monospace;color:#f4eae2;margin:12px 0}
+.lg-num{font:600 22px/1.2 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#f4eae2;margin:0 0 6px}
+@media(max-width:560px){.lg-row{grid-template-columns:1fr}.lg-h{padding:14px 16px}.lg-b{padding:16px 16px 24px}dialog.lg{width:calc(100vw - 16px);max-height:92svh}}
+html.lg-lock{overflow:hidden}
+@media(prefers-reduced-motion:no-preference){dialog.lg[open]{animation:lgin .35s cubic-bezier(.25,.46,.45,.94)}@keyframes lgin{from{opacity:0;transform:translateY(12px)}}}
+</style>
+<div class="lg-bar" role="contentinfo"><span>© 2026 Mordisco</span><button type="button" data-lg="rec"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h10M9 8h5"/></svg>Libro de Reclamaciones</button><button type="button" data-lg="priv"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Política de privacidad</button></div>
+<dialog class="lg" id="lg-priv" aria-labelledby="lg-pt" data-lenis-prevent><div class="lg-h"><h2 id="lg-pt">Política de privacidad</h2><button type="button" class="lg-x" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><div class="lg-b" data-lenis-prevent>
+<p class="lg-note"><strong>Resumen.</strong> Solo pedimos los datos necesarios para atenderte y no los vendemos. Cada vez que pidas algo se abrirá WhatsApp con tu mensaje listo: tú decides si lo envías.</p>
+<h3>1. Quién es responsable de tus datos</h3>
+<p>El titular del banco de datos personales es <span class="lg-fill">[Razón social]</span>, RUC <span class="lg-fill">[RUC]</span>, con domicilio en <span class="lg-fill">[Dirección del local]</span>. Contacto para temas de privacidad: <span class="lg-fill">[correo del negocio]</span> o <a class="lg-wa" href="#">WhatsApp</a>.</p>
+<h3>2. Qué datos recopilamos (promociones)</h3>
+<ul><li>Tu correo electrónico, solo si lo escribes en el formulario de suscripción y aceptas recibir novedades</li><li>Tu número de teléfono, si nos llamas o nos escribes</li></ul>
+<p>No pedimos datos de tarjetas ni claves bancarias en esta página.</p>
+<h3>3. Para qué los usamos</h3>
+<ul><li>Enviarte novedades, promociones y combos, solo si lo aceptaste.</li><li>Responder tus consultas y los reclamos del Libro de Reclamaciones.</li></ul><p>El envío de promociones es opcional. Puedes dejar de recibirlas cuando quieras escribiéndonos, y no afecta tu uso de la página ni tus compras.</p>
+<h3>4. Tu consentimiento</h3>
+<p>Tratamos tus datos con tu consentimiento libre, previo, expreso e informado, de acuerdo con la Ley N.° 29733, Ley de Protección de Datos Personales, y su reglamento (D.S. N.° 003-2013-JUS). Al enviar un formulario o un mensaje desde esta página, aceptas esta política. Puedes retirar tu consentimiento cuando quieras.</p>
+<h3>5. Con quién compartimos información</h3>
+<p>No vendemos ni alquilamos tus datos. Solo intervienen los servicios que hacen funcionar la página:</p>
+<ul><li><strong>WhatsApp (Meta Platforms)</strong>: cuando envías un mensaje por WhatsApp, el mensaje viaja por esa aplicación y se rige también por sus políticas.</li><li><strong>Vercel</strong>: aloja esta página y puede registrar datos técnicos de la conexión (como la dirección IP) para que el sitio funcione y sea seguro.</li><li><strong>Google Fonts y Unsplash</strong> (o los servicios que se indiquen en el sitio): entregan tipografías e imágenes; al cargarlas, esos servicios reciben la dirección IP de tu dispositivo.</li></ul>
+<p>Podemos compartir datos con autoridades cuando una norma o una orden lo exija.</p>
+
+<h3>6. Cookies y almacenamiento en tu navegador</h3>
+<p>Esta página no usa cookies de seguimiento ni publicidad. El almacenamiento del navegador, si se usa, solo recuerda opciones de visualización.</p>
+<h3>7. Cuánto tiempo los conservamos</h3>
+<p>Guardamos tu correo hasta que pidas darte de baja. Los datos de reclamos se conservan el tiempo que exige la normativa.</p>
+<h3>8. Tus derechos</h3>
+<p>Puedes pedir en cualquier momento acceso, rectificación, cancelación u oposición sobre tus datos (derechos ARCO). Escríbenos por WhatsApp o a <span class="lg-fill">[correo del negocio]</span> indicando tu nombre y qué quieres hacer, y te respondemos dentro de los plazos de la ley. Si crees que no atendimos bien tu solicitud, puedes acudir a la Autoridad Nacional de Protección de Datos Personales (Ministerio de Justicia y Derechos Humanos).</p>
+<h3>9. Seguridad</h3>
+<p>Aplicamos medidas razonables para proteger tu información. Ningún sistema es 100 % seguro, por eso te recomendamos no escribir datos sensibles en los mensajes.</p>
+<h3>10. Menores de edad</h3>
+<p>Esta página no está dirigida a menores de 14 años. Si eres menor de edad, pide a tu madre, padre o apoderado que haga la solicitud.</p>
+<h3>11. Cambios en esta política</h3>
+<p>Si cambiamos esta política, publicaremos la nueva versión aquí con su fecha. Última actualización: 5 de noviembre de 2026.</p>
+</div></dialog>
+<dialog class="lg" id="lg-rec" aria-labelledby="lg-rt" data-lenis-prevent><div class="lg-h"><h2 id="lg-rt">Libro de Reclamaciones</h2><button type="button" class="lg-x" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><div class="lg-b" data-lenis-prevent>
+<p class="lg-note"><strong>Libro de Reclamaciones.</strong> Aquí puedes registrar un reclamo o una queja sobre el pedido o la atención. Los campos marcados con * son obligatorios. Presentar un reclamo no te impide acudir al Indecopi ni a otras vías.</p>
+<form id="lg-form" novalidate>
+<fieldset><legend>1. Identificación del consumidor</legend>
+<label for="lg-n">Nombres y apellidos *</label><input id="lg-n" name="nombre" autocomplete="name" required>
+<div class="lg-row"><div><label for="lg-td">Tipo de documento *</label><select id="lg-td" name="td"><option>DNI</option><option>Carné de extranjería</option><option>Pasaporte</option><option>RUC</option></select></div>
+<div><label for="lg-nd">Número de documento *</label><input id="lg-nd" name="nd" inputmode="numeric" autocomplete="off" required></div></div>
+<label for="lg-dom">Domicilio *</label><input id="lg-dom" name="dom" autocomplete="street-address" required>
+<div class="lg-row"><div><label for="lg-tel">Teléfono *</label><input id="lg-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" required></div>
+<div><label for="lg-em">Correo electrónico *</label><input id="lg-em" name="em" type="email" autocomplete="email" required></div></div>
+<label for="lg-ap">Si eres menor de edad: nombre de tu madre, padre o apoderado</label><input id="lg-ap" name="ap" autocomplete="off">
+</fieldset>
+<fieldset><legend>2. Identificación del bien contratado</legend>
+<div class="lg-opt" role="radiogroup" aria-label="Tipo de bien"><label><input type="radio" name="bien" value="Producto" checked>Producto</label><label><input type="radio" name="bien" value="Servicio" >Servicio</label></div>
+<div class="lg-row"><div><label for="lg-mt">Monto reclamado (S/)</label><input id="lg-mt" name="monto" inputmode="decimal" placeholder="0.00"></div>
+<div><label for="lg-ds">Descripción del bien *</label><input id="lg-ds" name="desc" required></div></div>
+</fieldset>
+<fieldset><legend>3. Detalle del reclamo o la queja</legend>
+<div class="lg-opt" role="radiogroup" aria-label="Tipo de caso"><label><input type="radio" name="tipo" value="Reclamo" checked>Reclamo (no estoy conforme con el producto o servicio)</label><label><input type="radio" name="tipo" value="Queja">Queja (no estoy conforme con la atención)</label></div>
+<label for="lg-dt">Detalle *</label><textarea id="lg-dt" name="detalle" placeholder="Ej.: el pedido llegó incompleto" required></textarea>
+<label for="lg-pd">¿Qué solución pides? *</label><textarea id="lg-pd" name="pedido" required></textarea>
+</fieldset>
+<label class="lg-chk"><input type="checkbox" id="lg-ok" required><span>Declaro que los datos son verdaderos y acepto que se usen para atender este caso, según la <button type="button" class="lg-linkpriv" style="all:unset;cursor:pointer;color:#ecc3b8;text-decoration:underline;text-underline-offset:3px">Política de privacidad</button>. *</span></label>
+<p class="lg-err" id="lg-err" role="alert"></p>
+<button type="submit" class="lg-go">Registrar y generar mi hoja</button>
+</form>
+<div id="lg-done" hidden>
+<p class="lg-num" id="lg-num"></p>
+<p>Tu hoja está lista. Falta un paso: envíala al negocio por WhatsApp para que la reciba. Guarda una captura o copia el texto como constancia.</p>
+<pre class="lg-sum" id="lg-sum"></pre>
+<div class="lg-acts"><a class="lg-go" id="lg-send" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a><button type="button" class="lg-ghost" id="lg-copy">Copiar texto</button><button type="button" class="lg-ghost" id="lg-new">Registrar otro</button></div>
+<p style="margin-top:14px">El proveedor responde dentro del plazo que fija la normativa vigente. Datos del proveedor: <span class="lg-fill">[Razón social]</span>, RUC <span class="lg-fill">[RUC]</span>, <span class="lg-fill">[Dirección del local]</span>.</p>
+</div>
+</div></dialog>
+<script>
+(function(){
+  var CFG={wa:'51941614879',nombre:"Mordisco",razon:"[Razón social]",ruc:"[RUC]",dir:"[Dirección del local]",slug:'mordisco'};
+  var d=document,$=function(s,r){return (r||d).querySelector(s)},$$=function(s,r){return [].slice.call((r||d).querySelectorAll(s))};
+  var P=$('#lg-priv'),R=$('#lg-rec'),root=d.documentElement;
+  if(!P||!R||typeof P.showModal!=='function'){ // navegador sin <dialog>: mostrar como bloques simples
+    $$('.lg-bar button[data-lg]').forEach(function(b){b.hidden=true});return;}
+  function show(x){ if(!x.open){x.showModal();root.classList.add('lg-lock');var b=$('.lg-b',x);if(b)b.scrollTop=0;} }
+  d.addEventListener('click',function(e){
+    var b=e.target.closest('[data-lg]');
+    if(b){e.preventDefault();var w=b.getAttribute('data-lg');if(R.open){R.close()}if(P.open){P.close()}show(w==='rec'?R:P);return;}
+    if(e.target.closest('.lg-linkpriv')){R.close();show(P);return;}
+    var x=e.target.closest('.lg-x');if(x){x.closest('dialog').close();return;}
+    if(e.target.tagName==='DIALOG'){var r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close();}
+  });
+  [P,R].forEach(function(x){x.addEventListener('close',function(){if(!P.open&&!R.open)root.classList.remove('lg-lock')})});
+  $$('.lg-wa').forEach(function(a){a.href='https://wa.me/'+CFG.wa+'?text='+encodeURIComponent('Hola '+CFG.nombre+', tengo una consulta sobre mis datos personales.');a.target='_blank';a.rel='noopener'});
+  var h=location.hash;if(h==='#politica-de-privacidad')show(P);if(h==='#libro-de-reclamaciones')show(R);
+
+  var f=$('#lg-form'),err=$('#lg-err'),done=$('#lg-done');
+  function key(){return 'lg-n-'+CFG.slug}
+  function next(){var n=1;try{n=(parseInt(localStorage.getItem(key()),10)||0)+1;localStorage.setItem(key(),String(n))}catch(e){n=Math.floor(Date.now()/1000)%10000}
+    var s='000'+n;return s.slice(-4)+'-'+new Date().getFullYear()}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();err.textContent='';
+    var v=function(n){return (f.elements[n]&&f.elements[n].value||'').trim()};
+    var need=[['nombre','tus nombres y apellidos'],['nd','el número de documento'],['dom','tu domicilio'],['tel','tu teléfono'],['em','tu correo'],['desc','la descripción del bien'],['detalle','el detalle'],['pedido','la solución que pides']];
+    for(var i=0;i<need.length;i++){if(!v(need[i][0])){err.textContent='Falta '+need[i][1]+'.';f.elements[need[i][0]].focus();return}}
+    if(v('td')==='DNI'&&!/^\d{8}$/.test(v('nd'))){err.textContent='El DNI debe tener 8 números.';f.elements.nd.focus();return}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(v('em'))){err.textContent='Escribe un correo válido, por ejemplo nombre@correo.com.';f.elements.em.focus();return}
+    if(v('monto')&&!/^\d+([.,]\d{1,2})?$/.test(v('monto'))){err.textContent='El monto debe ser un número, por ejemplo 45 o 45.50.';f.elements.monto.focus();return}
+    if(!$('#lg-ok').checked){err.textContent='Marca la casilla de declaración para continuar.';$('#lg-ok').focus();return}
+    var num=next(),fe=new Date().toLocaleDateString('es-PE',{day:'2-digit',month:'2-digit',year:'numeric'});
+    var bien=(f.querySelector('input[name=bien]:checked')||{}).value,tipo=(f.querySelector('input[name=tipo]:checked')||{}).value;
+    var t=['LIBRO DE RECLAMACIONES · HOJA N.° '+num,'Fecha: '+fe,'',
+      'PROVEEDOR','Razón social: '+CFG.razon,'RUC: '+CFG.ruc,'Dirección: '+CFG.dir,'Establecimiento: '+CFG.nombre,'',
+      'CONSUMIDOR','Nombre: '+v('nombre'),v('td')+': '+v('nd'),'Domicilio: '+v('dom'),'Teléfono: '+v('tel'),'Correo: '+v('em')]
+      .concat(v('ap')?['Madre, padre o apoderado: '+v('ap')]:[])
+      .concat(['','BIEN CONTRATADO',bien+': '+v('desc')],v('monto')?['Monto reclamado: S/ '+v('monto')]:[],
+      ['','TIPO: '+tipo.toUpperCase(),'Detalle: '+v('detalle'),'Pedido del consumidor: '+v('pedido')]);
+    var txt=t.join('\n');
+    $('#lg-num').textContent='Hoja N.° '+num;$('#lg-sum').textContent=txt;
+    $('#lg-send').href='https://wa.me/'+CFG.wa+'?text='+encodeURIComponent(txt);
+    f.hidden=true;done.hidden=false;$('.lg-b',R).scrollTop=0;
+  });
+  $('#lg-copy').addEventListener('click',function(){var b=this,t=$('#lg-sum').textContent;
+    var ok=function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar texto'},1800)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){})}
+    else{var r=d.createRange();r.selectNodeContents($('#lg-sum'));var s=getSelection();s.removeAllRanges();s.addRange(r);ok()}});
+  $('#lg-new').addEventListener('click',function(){f.reset();f.hidden=false;done.hidden=true;err.textContent='';$('.lg-b',R).scrollTop=0});
+})();
+</script>
+<!-- LEGAL:FIN -->
 </body>
 </html>
